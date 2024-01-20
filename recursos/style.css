@@ -1,0 +1,584 @@
+/*Importamos la fuente a usar*/
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+
+:root{
+    /*Colores*/
+    --c-blanquecino: #E0ECFF;
+    --c-primario: #A1BFF7;
+    --c-secundario: #C5D8FF;
+    --c-terciario: #5078AC;
+    --c-oscuro: #525252;
+    --c-verde: #D1FABD;
+    --c-rojo: #FABDBD;
+
+    /*Images Background*/
+    --bg-principal: url("../multimedia/Polideportivo.webp");
+    --bg-usuario: url("../multimedia/Vestuario.webp");
+    --bg-reserva: url("../multimedia/DrimingSport.webp");
+    --bg-logo: url("../multimedia/Sport_Center.webp");
+    --bg-opcion: url("../multimedia/Options.webp");
+}
+
+
+
+/*** A IMPLEMENTAR ***/
+/*
+-> Signo de opciones
+    Triangulo invertido para desplegable (color terciario)
+   --NO FUE POSIBLE IMPLEMENTARLO--
+*/
+/**********************/
+
+/*Estilo de fuente y tamaño base de todo fuente no alterada posteriormente*/
+*{
+    font-family: 'Itim', cursive, Arial, Helvetica, sans-serif;
+    font-size: 1em;/*Tamaño por defecto del parrafo (p)*/
+    margin: 0;
+    padding: 0;
+}
+
+/*Enlaces*/
+a{
+    text-decoration: none; /* Quita el subrayado */
+    color: inherit; /* Usa el color heredado del elemento padre */
+    cursor: auto; /* Cambia el cursor de la mano a predeterminado */
+}
+input{
+    border: none;
+    border-radius: 15px;
+    height: 50px;
+    width: 330px;
+    padding-left: 20px;
+    margin: 15px;
+}
+html{
+    width: 100%;
+    min-height: 100vh;
+}
+body{
+    min-height: 100vh;
+    width: 100%;
+    background-color: var(--c-primario);;
+}
+/*Tamaño de letras*/
+/*Partiendo del tamaño de letra standard de navegador es 16px = 1em; se intentó mantener la equivalencia indicada*/
+h1{/*64 = 4em*//*Se redujo a 3.5 para cuadrar tamaño*/
+    font-size: 3.5em;
+}
+h2{/*48 = 3.5em*//*Se redujo a 3 para cuadrar tamaño*/
+    font-size: 3em;
+}
+h3{/*32 = 1.5em*/
+    font-size: 2em;
+}
+h4{/*24 = 1.5em*/
+    font-size: 1.5em;
+}
+h6{/*16 = 1em*/
+    font-size: 1em;
+}
+p{/*20 = 1.25em*//*Se cambio a 1.10 para mantener la congruencia*/
+    font-size: 1.1em;
+}
+
+h2,h3,h4,h5{
+    font-weight: normal;
+}
+
+/*Tipos de botones*/
+.b_Opcion, .all_Opcion *{
+    border-radius: 15px;
+    text-align: center;
+    justify-self: center;
+    padding: 10px;
+}
+.b_Entrada, .all_Entrada *{
+    border-radius: 15px;
+    text-align: left;
+    margin: 10px;
+    padding: 3px;
+}
+.b_Circular{
+    border-radius: 50%;
+}
+
+/*Variantes de color boton o colores del texto*/
+    /*La letra coincide con el color del fondo*/
+    /*Las variantes .all se usan para aplicar el estilo a todo lo subsiguiente*/
+.b_B, .all_B *{
+    color: var(--c-terciario);
+    background-color: var(--c-blanquecino);
+}
+.b_S, .all_S *, #nav_standard a:hover{
+    color: var(--c-oscuro);
+    background-color: var(--c-secundario); 
+}
+.text_O *, #nav_standard a:hover *, input{
+    color: var(--c-oscuro);
+}
+.b_T, .all_T *, .principal > header a:hover, .principal > header a:hover *{
+    color: var(--c-blanquecino);
+    background-color: var(--c-terciario);
+}
+.b_O, .all_O *{
+    color: var(--c-secundario);
+    background-color: var(--c-oscuro);
+}
+    /*OB hace referencia al color del fondo más el color del texto*/
+.b_OB, .all_OB *{
+    color: var(--c-blanquecino);
+    background-color: var(--c-oscuro);
+}
+.text_OB *{
+    color: var(--c-blanquecino);
+}
+.b_R, .all_R *{
+    color: var(--c-terciario);
+    background-color: var(--c-rojo);
+}
+.b_V, .all_V *{
+    color: var(--c-terciario);
+    background-color: var(--c-verde);
+}
+
+/*Logo*/
+.logo{
+    background-image: var(--bg-logo);
+    background-size: contain;
+    border: 1px solid var(--c-terciario);
+}
+/*Imagen de opciones*/
+.opcion{
+    background-image: var(--bg-opcion);
+    background-size: cover;
+}
+
+/*Página principal e index*/
+.principal{
+    background-image: var(--bg-principal);
+}
+
+.principal header > nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.principal header .b_Opcion{
+    width: 300px;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.principal header .logo{
+    border: 3px solid var(--c-terciario);
+    width: 217px;
+    height: 217px;
+}
+#index header .logo{
+    margin: 30px;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+.principal  h1{
+    width: 900px;
+}
+
+/*Login*/
+#login{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+#login .b_O{
+    grid-column: 2/3;
+    grid-row: 2/3;
+    width: 460px;
+    height: 400px;
+    justify-self: center;
+    align-self: center;
+}
+#login .logo{
+    width: 102px;
+    height: 102px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+#login main{
+    padding-bottom: 0px;
+}
+#login main .all_B{
+    margin: 15px;
+    width: 350px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+#login .all_B a:first-child{
+    grid-column: 1/2;
+}
+#login .all_B a:last-child{
+    grid-column: 3/-1;
+}
+#login a {
+    width: 130px;
+    height: 30px;
+}
+
+
+/*Cuenta*/
+.cuenta{
+    background-image: var(--bg-usuario);
+}
+.cuenta main> .b_B{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 420px;
+    height: 35px;
+    margin: 18px;
+    
+}
+.cuenta .b_Circular{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+}
+
+/*reserva*/
+.reserva{
+    background-image: var(--bg-reserva);
+}
+
+.r_selecion{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+}
+.r_selecion *, .r_selecion + .b_Opcion{
+    width: 200px;
+    height: 50px;
+    padding: 0px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6em;
+    border: none;
+}
+
+/*ELEMENTOS COMUNES*/
+/*Background comun*/
+.reserva, .principal, .cuenta{
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+/*Main comun*/
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 140px;
+}
+/*Footer comun*/
+footer{
+    display: flex;
+    flex-direction: column;   
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 0px;
+}
+footer > div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 6px;
+}
+footer p{
+    width: 300px;
+    padding: 5px;
+}
+footer > h6{
+    align-self: center
+}
+
+/*Barra de navegacion*/
+#nav_standard > nav{
+    width: 912px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+}
+#nav_standard .logo{
+    width: 56px;
+    height: 56px;
+    border: 1px solid var(--c-terciario);
+}
+#nav_standard{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+/*Eventos y reserva_info*/
+#reserva_info > div > div{
+    display: flex;
+    flex-direction: row;    
+    justify-content: space-between;
+
+}
+#eventos, #reserva_info {
+    width: 1000px;
+}
+#eventos > div, #reserva_info > div{
+    overflow: scroll;
+    overflow-x: hidden;
+    max-height: 380px;
+    min-height: 200px;
+}
+#eventos  h5 + p, #reserva_info h5 + p{
+    padding-left: 30px;
+}
+#eventos > div > div, #reserva_info > div > div{
+    width: 935px;
+}
+#eventos h3, #reserva_info h3{
+    text-align: center;
+    padding: 3px;
+}
+#eventos .text_O, #reserva_info .text_O{
+    padding-left: 10px;
+}
+.principal h1, #eventos, #reserva_info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#reserva_info .b_R{
+    display: flex;
+    align-items: center;
+}
+#reserva_info .b_R > p{
+    text-transform: uppercase;
+}
+
+/*WEBKIT ESTILO DE SCROLL*/
+/*No es compatible con Firefox, pero si es compatible con Chrome*/
+    /* Estilo de la barra lateral */
+#eventos > div::-webkit-scrollbar,#reserva_info > div::-webkit-scrollbar{
+width: 12px; /* Ancho de la barra lateral */
+background-color: var(--c-blanquecino);
+border-radius: 6px;
+border: 1px solid var(--c-oscuro);
+}
+    /* Estilo del pulgar (la parte deslizable) */
+#eventos > div::-webkit-scrollbar-thumb, #reserva_info > div::-webkit-scrollbar-thumb{
+background-color: var(--c-terciario);
+border-radius: 6px;
+border: 1px solid var(--c-oscuro);
+}
+    /* Ocultar la barra de desplazamiento horizontal */
+#eventos > div::-webkit-scrollbar-horizontal, #reserva_info > div::-webkit-scrollbar-horizontal{
+display: none;
+}
+
+/************************/
+
+
+
+
+
+
+/* PResponsive: */
+/*Se alteraron los parametros anteriores para lograr versiones adapatadas a las pantallas*/
+@media only screen and (max-width: 1060px) {
+    main{
+        padding-bottom: 270px;
+    }
+    footer > div{
+        flex-direction: column;
+    }
+    footer p{
+        width: 100%;
+        margin-left: 5px;
+    }  
+    .cuenta main > .b_B{
+        width: 80%;
+        margin: 15px;
+    }
+    .reserva main{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 5px;
+        margin: 5px;
+    }
+    .reserva main > .b_B, .reserva main > .b_O{
+        grid-column: -1/1;
+    }
+    .r_selecion{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+    }
+    .r_selecion *, .reserva main > .b_B{
+        font-size: 1.3em;
+    }
+    .r_selecion .all_B{
+        grid-column: -1/2;
+    }
+    .r_selecion .all_S{
+        grid-column: 2/-1;
+    }    
+    .r_selecion.all_B{
+        justify-self: right;
+    }
+    .r_selecion.all_S{
+        justify-self: left;
+    }
+    #reserva_info, #eventos, #reserva_info > div, #eventos > div{
+        width: 95%;
+    }
+    #reserva_info > div > div, #eventos > div > div{
+        width: 90%;
+    }
+    .cuenta header, #index header, .reserva header{
+        margin-bottom: 20px; 
+    }
+    #nav_standard > nav{
+        width: 95%;
+    }
+    #index h1{
+        width: 80%;
+        text-align: center;
+    }
+    #index header > nav{
+        display: grid;
+        grid-template-columns: 150px 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-gap: 10px;
+        margin: 10px
+    }
+    #index header .b_B{
+        grid-column: 2/-1;
+        width: 80%;
+        height: 47px;
+    }
+    #index header .b_Circular{
+        grid-row: -1/1;
+        width: 106px;
+        height: 106px;
+        margin: 0px;
+        align-self: center;
+        justify-self: center;
+    }
+    #login{
+        background-image: none;
+        background-color: var(--c-primario);
+    } 
+
+    
+}    
+
+@media only screen and (max-width: 590px) {
+        /*Tamaño de letras*/
+    /*Partiendo del tamaño de letra standard de navegador es 16px = 1em; se intentó mantener la equivalencia indicada*/
+    *{
+        font-size: 1em;
+    }
+    h1{
+        font-size: 2em;
+    }
+    h2{
+        font-size: 1.8em;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    h4{/*24 = 1.5em*/
+        font-size: 1.5em;
+    }
+    h3{
+        font-size: 1.3em;
+    }
+    p{/*16 = 1em*/
+        font-size: 1em;
+    }
+    h6{
+        font-size: 0.8em;
+    }  
+    .principal #eventos > div{
+        max-height: 280px;
+        min-height: 150px;
+    }
+    .r_selecion *, .r_selecion + .b_Opcion {
+        max-width: 140px;
+        height: 36px;
+    }
+    #reserva_info h5 + p , #eventos h5 + p{
+        padding-left: 3px;
+    }
+    #reserva_info .b_R{
+        padding: 2px;
+    }
+    #reserva_info .b_R p{
+        font-size: 0.9em;
+    }
+    #nav_standard {
+        margin-bottom: 5px;
+    }
+    #nav_standard > nav{
+        height: 35px;
+    }
+    #nav_standard .logo{
+        width: 33px;
+        height: 33px;
+        margin: 0;
+        padding: 0;
+    }
+    #ocultar{
+        display: none;
+    }
+    #eventos > div, #reserva_info > div {
+        max-height: 200px;
+        min-height: 150px;
+    }
+    #login a {
+        width: 90px;
+        height: 30px;
+    }
+    #login .b_O{
+        grid-row: 1/2;
+        width: 90vw;
+    }
+    #login input, #login main div, #login main .all_B{
+        width: 85%;
+    }
+}
+@media only screen and (max-width: 500px) {
+
+    .principal, .cuenta, .reserva{
+        background-image: none;
+    }      
+}
+@media only screen and (max-width: 330px) {
+    #nav_standard .logo{
+        display: none;
+    }
+    #login a {
+        width: 70px;
+        height: 30px;
+      }
+    
+}
